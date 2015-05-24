@@ -17,12 +17,15 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from rest_framework import routers
 from recipes.views import RecipeViewSet
+from material.frontend import urls as frontend_urls
 
 router = routers.DefaultRouter()
 router.register(r'recipes', RecipeViewSet)
 
 urlpatterns = [
-	url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
+	
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(router.urls)),
+    url(r'', include(frontend_urls)),
+    
 ]

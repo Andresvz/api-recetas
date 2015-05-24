@@ -22,5 +22,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
 	 filter_class = RecipeFilter
 
 
+
+
 	
 	
